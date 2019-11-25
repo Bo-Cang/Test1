@@ -1,14 +1,14 @@
 import sqlite3
 import wordninja
-from bottle import route, run, template, request, static_file, redirect, Bottle
+from bottle import route, run, template, request, static_file, redirect, bottle
 
-APP = Bottle()
-@APP.route('/')
+APP = bottle.Bottle()
+@APP.get('/')
 def index():
     return redirect("/hello/")
 
 
-@APP.route('/hello/')
+@APP.get('/hello/')
 def index():
     form = request.GET.decode('gbk')
     keyword = form.get("keyword", "")
@@ -68,4 +68,4 @@ def get_page_id_list_from_key_word_cut(cut):
     return res
 
 if __name__ == '__main__':
-    APP.run()
+    bottle.run(application=APP)
