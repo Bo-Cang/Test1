@@ -43,7 +43,7 @@ def get_page_list_from_page_id_list(page_id_list):
     for k in page_id_list:
         id_list += "%s,"%k
     id_list = id_list.strip(",") + ")"
-    conn = sqlite3.connect(data5.db")
+    conn = sqlite3.connect(data5.db)
     c = conn.cursor()
     sql = "select * " \
           + "from page_info  " \
@@ -58,7 +58,7 @@ def get_page_id_list_from_key_word_cut(cut):
             continue
         keyword += "'%s',"%k
     keyword = keyword.strip(",") + ")"
-    conn = sqlite3.connect(data5.db")
+    conn = sqlite3.connect(data5.db)
     c = conn.cursor()
     sql = "select page_id " \
           + "from page_index  " \
