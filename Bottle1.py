@@ -20,7 +20,7 @@ def index():
         "page_list": page_list[:20],
         "keyword": keyword
     }
-    return template(searcher.html", context)
+    return template(searcher.html, context)
 
 def sort_page_list(page_list, cut):
     con_list = []
