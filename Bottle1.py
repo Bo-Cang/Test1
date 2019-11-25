@@ -1,7 +1,6 @@
 import sqlite3
 import wordninja
 from bottle import route, run, template, request, static_file, redirect, bottle
-from flask import Flask
 
 APP = bottle.Bottle()
 @APP.route('/')
